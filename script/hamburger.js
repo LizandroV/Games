@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
+const menuIcon = document.getElementById('menuIcon');
+const nav = document.getElementById('nav');
 
-    hamburger.addEventListener('click', () => {
-        menu.classList.toggle('show');
-    });
+menuIcon.addEventListener('click', () => {
+    nav.classList.toggle('show');
 });
