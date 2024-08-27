@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juegos Web Sencillos</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LV | Games</title>
+        <meta name="description" content="Games">
+        <meta name="author" content="Lizandro Vivanco">
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- STYLES -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Permanent+Marker&display=swap" rel="stylesheet">
+        <!-- META TAGS -->
+        <meta property="og:title" content="LV | Games">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://i.postimg.cc/ctGFgHjf/LV-Logo.jpg">
+        <meta property="og:url" content="https://lizandrov.github.io/Games">
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="/placeholder.svg?height=50&width=50" alt="Logo de Juegos Web">
-            </div>
-            <div class="menu-icon" id="menuIcon">☰</div>
-            <nav id="nav">
+        <div class="container">
+            <nav>
+                <a href="./index.html" class="logo">
+                    <img src="images/apple-touch-icon.png" alt="Logo">
+                </a>
                 <ul>
-                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./index.html" class="active">Inicio</a></li>
                     <li><a href="./games.html">Juegos</a></li>
-                    <li><a href="./about.html">Acerca de</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,42 +42,45 @@
 
     <main>
         <div class="container">
-            <h1>Juegos Web Sencillos</h1>
+            <h1>Top Juegos</h1>
             <div class="games-grid">
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 1">
-                    <h3>Juego 1</h3>
+                    <img src="images/sudoku.png" alt="Juego 1">
+                    <h3>Sudoku</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 2">
-                    <h3>Juego 2</h3>
+                    <img src="images/snake.png" alt="Juego 2">
+                    <h3>Snake</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 3">
-                    <h3>Juego 3</h3>
+                    <img src="images/tictactoe.png" alt="Juego 3">
+                    <h3>Tres en raya</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 4">
-                    <h3>Juego 4</h3>
+                    <img src="images/pacman.png" alt="Juego 4">
+                    <h3>Pacman</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 5">
-                    <h3>Juego 5</h3>
+                    <img src="images/chess.webp" alt="Juego 5">
+                    <h3>Ajedrez</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Juego 6">
-                    <h3>Juego 6</h3>
+                    <img src="images/tetris.png" alt="Juego 6">
+                    <h3>Tetris</h3>
+                    <a href="#" class="play-button">Jugar</a>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Lizandro Vivanco.</p>
-        </div>
+        <p>&copy;<span id="year"></span> | Lizandro Vivanco</p>
     </footer>
-
-    <script src="script/hamburger.js"></script>
+    <script src="script/main.js"></script>
 </body>
 </html>

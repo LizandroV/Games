@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Juegos - Juegos Web Sencillos</title>
-    <link rel="stylesheet" href="styles/games.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LV | Games</title>
+        <meta name="description" content="Games">
+        <meta name="author" content="Lizandro Vivanco">
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- STYLES -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Permanent+Marker&display=swap" rel="stylesheet">
+        <!-- META TAGS -->
+        <meta property="og:title" content="LV | Games">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://i.postimg.cc/ctGFgHjf/LV-Logo.jpg">
+        <meta property="og:url" content="https://lizandrov.github.io/Games">
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">
-                    <img src="/placeholder.svg?height=50&width=50" alt="Logo de Juegos Web Sencillos">
+                <a href="./index.html" class="logo">
+                    <img src="images/apple-touch-icon.png" alt="Logo">
                 </a>
                 <ul>
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./games.html" class="active">Juegos</a></li>
-                    <li><a href="./about.html">Acerca de</a></li>
                 </ul>
             </nav>
         </div>
@@ -24,7 +42,6 @@
 
     <main>
         <div class="container">
-            <h1>Nuestros Juegos</h1>
             <div class="search-bar">
                 <input type="text" id="game-search" placeholder="Buscar juegos...">
                 <button id="search-button">Buscar</button>
@@ -40,37 +57,37 @@
             </div>
             <div class="games-grid">
                 <div class="game-card" data-category="puzzle">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Sudoku">
+                    <img src="images/sudoku.png" alt="Sudoku">
                     <h3>Sudoku</h3>
                     <p>Pon a prueba tu lógica con este clásico juego de números.</p>
                     <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card" data-category="arcade">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Snake">
+                    <img src="images/snake.png" alt="Snake">
                     <h3>Snake</h3>
                     <p>Guía a la serpiente para que coma y crezca sin chocar.</p>
                     <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card" data-category="puzzle">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Tetris">
+                    <img src="images/tetris.png" alt="Tetris">
                     <h3>Tetris</h3>
                     <p>Organiza las piezas que caen para crear líneas completas.</p>
                     <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card" data-category="strategy">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Ajedrez">
+                    <img src="images/chess.webp" alt="Ajedrez">
                     <h3>Ajedrez</h3>
                     <p>El juego de estrategia por excelencia. Desafía tu mente.</p>
                     <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card" data-category="arcade">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Pac-Man">
+                    <img src="images/pacman.png" alt="Pac-Man">
                     <h3>Pac-Man</h3>
                     <p>Come todos los puntos y evita a los fantasmas en este clásico arcade.</p>
                     <a href="#" class="play-button">Jugar</a>
                 </div>
                 <div class="game-card" data-category="strategy">
-                    <img src="/placeholder.svg?height=200&width=300" alt="Tres en Raya">
+                    <img src="images/tictactoe.png" alt="Tres en Raya">
                     <h3>Tres en Raya</h3>
                     <p>Consigue alinear tres símbolos antes que tu oponente.</p>
                     <a href="#" class="play-button">Jugar</a>
@@ -80,38 +97,9 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Juegos Web Sencillos. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy;<span id="year"></span> | Lizandro Vivanco</p>
     </footer>
-
-    <script>
-        const gameSearch = document.getElementById('game-search');
-        const searchButton = document.getElementById('search-button');
-        const categorySelect = document.getElementById('category-select');
-        const gameCards = document.querySelectorAll('.game-card');
-
-        function filterGames() {
-            const searchTerm = gameSearch.value.toLowerCase();
-            const selectedCategory = categorySelect.value;
-
-            gameCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const category = card.dataset.category;
-                const matchesSearch = title.includes(searchTerm);
-                const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
-
-                if (matchesSearch && matchesCategory) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        searchButton.addEventListener('click', filterGames);
-        gameSearch.addEventListener('keyup', filterGames);
-        categorySelect.addEventListener('change', filterGames);
-    </script>
+    <script src="script/main.js"></script>
+    <script src="script/games.js"></script>
 </body>
 </html>
