@@ -1,0 +1,214 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Encabezado */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #f1c453;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#new-card-btn {
+  padding: 10px 15px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#new-card-btn:hover {
+  background-color: #1f7a6f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#new-card-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Cartilla de BINGO */
+.bingo-card {
+  width: 100%;
+  background-color: #16213e;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.header-cell {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.header-cell:nth-child(1) {
+  background-color: #e63946;
+}
+.header-cell:nth-child(2) {
+  background-color: #f1c453;
+  color: #000;
+}
+.header-cell:nth-child(3) {
+  background-color: #2a9d8f;
+}
+.header-cell:nth-child(4) {
+  background-color: #457b9d;
+}
+.header-cell:nth-child(5) {
+  background-color: #9d4edd;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.number-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #0f3460;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.number-cell:hover {
+  background-color: #1a4980;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.number-cell.marked {
+  background-color: #e94560;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.number-cell.marked::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.number-cell.free-space {
+  background-color: #f1c453;
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+/* Instrucciones */
+.instructions {
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+/* Animaciones */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .number-cell {
+    font-size: 20px;
+  }
+
+  .header-cell {
+    font-size: 24px;
+    height: 40px;
+  }
+}

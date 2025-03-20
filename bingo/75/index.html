@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartilla de BINGO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Cartilla de BINGO</h1>
+        <button id="new-card-btn">Nueva Cartilla</button>
+      </header>
+
+      <div class="bingo-card">
+        <div class="card-header">
+          <div class="header-cell">B</div>
+          <div class="header-cell">I</div>
+          <div class="header-cell">N</div>
+          <div class="header-cell">G</div>
+          <div class="header-cell">O</div>
+        </div>
+        <div id="card-grid" class="card-grid">
+          <!-- Los números se generarán con JavaScript -->
+        </div>
+      </div>
+
+      <div class="instructions">
+        <p>Toca un número para marcarlo o desmarcarlo</p>
+        <p>
+          Actualiza la página o presiona "Nueva Cartilla" para generar una nueva
+          cartilla aleatoria
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

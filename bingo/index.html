@@ -1,77 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BINGO</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1 class="bingo-title">
-                <span class="letter b">B</span>
-                <span class="letter i">I</span>
-                <span class="letter n">N</span>
-                <span class="letter g">G</span>
-                <span class="letter o">O</span>
-            </h1>
-        </header>
+      <header>
+        <h1 class="bingo-title">
+          <span class="letter b">B</span>
+          <span class="letter i">I</span>
+          <span class="letter n">N</span>
+          <span class="letter g">G</span>
+          <span class="letter o">O</span>
+        </h1>
+      </header>
 
-        <main>
-            <div class="current-number-panel">
-                <div class="current-ball">
-                    <span id="current-letter">-</span>
-                    <span id="current-number">-</span>
-                </div>
-                <div id="announcement" class="announcement">Esperando inicio...</div>
-                
-                <div class="speed-control">
-                    <h3>Velocidad</h3>
-                    <div class="speed-slider-container">
-                        <input type="range" id="speed-slider" min="1" max="10" value="5" class="speed-slider">
-                        <div class="speed-labels">
-                            <span>Lenta</span>
-                            <span>Normal</span>
-                            <span>Rápida</span>
-                        </div>
-                    </div>
-                    <div class="current-speed">
-                        <span id="speed-value">5 segundos</span>
-                    </div>
-                </div>
-                
-                <div class="last-numbers">
-                    <h2>Últimos Números</h2>
-                    <div id="history" class="history"></div>
-                </div>
-                
-                <div class="controls">
-                    <button id="start-btn">Iniciar</button>
-                    <button id="speak-btn">Repetir Voz</button>
-                    <button id="pause-btn" disabled>Pausar</button>
-                    <button id="reset-btn">Reiniciar</button>
-                </div>
-                
-                <div class="voice-status">
-                    <p id="voice-indicator">Estado de voz: <span>Esperando</span></p>
-                </div>
+      <main>
+        <div class="current-number-panel">
+          <div class="current-ball">
+            <span id="current-letter">-</span>
+            <span id="current-number">-</span>
+          </div>
+          <div id="announcement" class="announcement">Esperando inicio...</div>
+
+          <div class="speed-control">
+            <h3>Velocidad</h3>
+            <div class="speed-slider-container">
+              <input
+                type="range"
+                id="speed-slider"
+                min="1"
+                max="10"
+                value="5"
+                class="speed-slider"
+              />
+              <div class="speed-labels">
+                <span>Lenta</span>
+                <span>Normal</span>
+                <span>Rápida</span>
+              </div>
             </div>
-            
-            <div class="bingo-board">
-                <div class="board-header">
-                    <div class="header-cell b">B</div>
-                    <div class="header-cell i">I</div>
-                    <div class="header-cell n">N</div>
-                    <div class="header-cell g">G</div>
-                    <div class="header-cell o">O</div>
-                </div>
-                <div id="board" class="board-grid"></div>
+            <div class="current-speed">
+              <span id="speed-value">5 segundos</span>
             </div>
-        </main>
+          </div>
+
+          <div class="last-numbers">
+            <h2>Últimos Números</h2>
+            <div id="history" class="history"></div>
+          </div>
+
+          <div class="controls">
+            <button id="start-btn">Iniciar</button>
+            <button id="speak-btn">Repetir Voz</button>
+            <button id="pause-btn" disabled>Pausar</button>
+            <button id="reset-btn">Reiniciar</button>
+            <button>
+              <a href="75/index.html" style="text-decoration: none">Cartilla</a>
+            </button>
+          </div>
+
+          <div class="voice-status">
+            <p id="voice-indicator">Estado de voz: <span>Esperando</span></p>
+          </div>
+        </div>
+
+        <div class="bingo-board">
+          <div class="board-header">
+            <div class="header-cell b">B</div>
+            <div class="header-cell i">I</div>
+            <div class="header-cell n">N</div>
+            <div class="header-cell g">G</div>
+            <div class="header-cell o">O</div>
+          </div>
+          <div id="board" class="board-grid"></div>
+        </div>
+      </main>
     </div>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
