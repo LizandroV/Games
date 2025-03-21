@@ -46,27 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Loading sample data");
     verdades = [
       "¿Cuál es tu mayor miedo?",
-      "¿Cuál ha sido la mentira más grande que has dicho?",
-      "¿Qué es lo más vergonzoso que has hecho por amor?",
-      "¿Cuál es tu mayor secreto?",
-      "¿Alguna vez has robado algo?",
-      "¿Cuál es tu mayor inseguridad?",
-      "¿Qué es lo más loco que has hecho estando borracho/a?",
-      "¿Alguna vez has espiado a alguien?",
-      "¿Cuál es tu mayor arrepentimiento?",
       "¿Qué es lo más atrevido que has hecho en público?",
     ];
 
     retos = [
       "Haz 10 flexiones ahora mismo.",
-      "Llama a un contacto aleatorio de tu teléfono y cántale una canción.",
-      "Deja que la persona a tu derecha te haga un peinado loco.",
-      "Imita a un animal durante 1 minuto.",
-      "Baila sin música durante 30 segundos.",
-      "Deja que alguien te maquille con los ojos vendados.",
-      "Come una cucharada de salsa picante.",
-      "Envía un mensaje vergonzoso a tu crush o ex.",
-      "Habla con acento extranjero durante las próximas 3 rondas.",
       "Deja que alguien publique lo que quiera en tus redes sociales.",
     ];
 
