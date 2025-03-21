@@ -53,7 +53,6 @@ header {
 }
 .i {
   background-color: #f1c453;
-  color: #000;
 }
 .n {
   background-color: #2a9d8f;
@@ -290,10 +289,13 @@ main {
 }
 #pause-btn {
   background-color: #f1c453;
-  color: #000;
 }
 #reset-btn {
   background-color: #e63946;
+}
+
+#card-btn {
+  background-color: #457b9d;
 }
 
 .voice-status {
@@ -341,7 +343,6 @@ main {
 }
 .header-cell.i {
   background-color: #f1c453;
-  color: #000;
 }
 .header-cell.n {
   background-color: #2a9d8f;

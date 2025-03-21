@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BINGO</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./images/site.webmanifest" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
@@ -42,9 +56,9 @@
                 class="speed-slider"
               />
               <div class="speed-labels">
-                <span>Lenta</span>
+                <span>Rápido</span>
                 <span>Normal</span>
-                <span>Rápida</span>
+                <span>Lenta</span>
               </div>
             </div>
             <div class="current-speed">
@@ -62,8 +76,11 @@
             <button id="speak-btn">Repetir Voz</button>
             <button id="pause-btn" disabled>Pausar</button>
             <button id="reset-btn">Reiniciar</button>
-            <button>
-              <a href="75/index.html" style="text-decoration: none">Cartilla</a>
+            <button
+              id="card-btn"
+              onclick="window.location.href='75/index.html'"
+            >
+              Cartilla
             </button>
           </div>
 

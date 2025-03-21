@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tetris</h1>
+
+      <div class="game-container">
+        <!-- Game info and controls -->
+        <div class="game-info">
+          <div class="info-card">
+            <h2>Score: <span id="score">0</span></h2>
+            <div class="info-grid">
+              <div>Level: <span id="level">1</span></div>
+              <div>Lines: <span id="lines">0</span></div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h2>Next Piece</h2>
+            <div id="next-piece" class="next-piece-container"></div>
+          </div>
+
+          <div class="button-container">
+            <button id="start-pause-btn" class="btn primary-btn">
+              <span class="icon">▶</span> Start Game
+            </button>
+            <button id="restart-btn" class="btn danger-btn" disabled>
+              <span class="icon">↻</span> Restart
+            </button>
+          </div>
+
+          <div class="info-card">
+            <h2>Controls</h2>
+            <div class="controls-grid">
+              <div>← →</div>
+              <div>Move</div>
+              <div>↑</div>
+              <div>Rotate</div>
+              <div>↓</div>
+              <div>Soft Drop</div>
+              <div>Space</div>
+              <div>Hard Drop</div>
+              <div>P</div>
+              <div>Pause</div>
+            </div>
+          </div>
+
+          <!-- Mobile controls -->
+          <div class="mobile-controls">
+            <div class="mobile-controls-row">
+              <button id="left-btn" class="btn outline-btn">
+                <span class="icon">←</span>
+              </button>
+              <button id="down-btn" class="btn outline-btn">
+                <span class="icon">↓</span>
+              </button>
+              <button id="right-btn" class="btn outline-btn">
+                <span class="icon">→</span>
+              </button>
+            </div>
+            <div class="mobile-controls-row">
+              <button id="rotate-btn" class="btn outline-btn">
+                <span class="icon">↑</span>
+              </button>
+              <button id="hard-drop-btn" class="btn outline-btn">
+                Hard Drop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game board -->
+        <div id="game-area" class="game-area" tabindex="0">
+          <div id="board" class="board"></div>
+
+          <!-- Game over overlay -->
+          <div id="game-over" class="overlay game-over-overlay hidden">
+            <div class="overlay-content">
+              <div class="overlay-title">Game Over</div>
+              <div class="overlay-score">
+                Score: <span id="final-score">0</span>
+              </div>
+              <button id="play-again-btn" class="btn primary-btn">
+                Play Again
+              </button>
+            </div>
+          </div>
+
+          <!-- Pause overlay -->
+          <div id="pause-overlay" class="overlay pause-overlay hidden">
+            <div class="overlay-content">
+              <div class="overlay-title">Paused</div>
+            </div>
+          </div>
+
+          <!-- Start game overlay -->
+          <div id="start-overlay" class="overlay start-overlay">
+            <div class="overlay-content">
+              <div class="overlay-title">Press Start to Play</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
