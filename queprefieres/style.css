@@ -1,0 +1,274 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Aumentado para más espacio */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px; /* Aumentado el padding */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Aumentado el espacio entre elementos */
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 20px; /* Aumentado el margen */
+}
+
+h1 {
+  font-size: 4rem; /* Título más grande */
+  font-weight: 800;
+  color: #6a11cb;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de opciones */
+.options-container {
+  display: flex;
+  gap: 30px; /* Más espacio entre opciones */
+  position: relative;
+  min-height: 350px; /* Altura mínima aumentada */
+}
+
+.vs-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  font-weight: 800;
+  font-size: 2rem; /* Tamaño aumentado */
+  width: 80px; /* Tamaño aumentado */
+  height: 80px; /* Tamaño aumentado */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.5);
+  z-index: 10;
+}
+
+.option {
+  flex: 1;
+  min-height: 350px; /* Altura mínima aumentada */
+  border-radius: 20px; /* Bordes más redondeados */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px; /* Padding aumentado */
+  text-align: center;
+  font-size: 2.2rem; /* Tamaño de texto aumentado */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  position: relative;
+  overflow: hidden;
+}
+
+.option:hover {
+  transform: translateY(-15px); /* Efecto hover más pronunciado */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.option:active {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#option1 {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: white;
+}
+
+#option2 {
+  background: linear-gradient(135deg, #fa709a, #fee140);
+  color: white;
+}
+
+.option p {
+  position: relative;
+  z-index: 2;
+  line-height: 1.4; /* Mejor espaciado de línea */
+}
+
+.option::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.option:hover::before {
+  transform: translateX(0);
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Aumentado */
+}
+
+#next-btn {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 20px 60px; /* Botón más grande */
+  font-size: 1.5rem; /* Texto más grande */
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+  letter-spacing: 2px; /* Más espaciado entre letras */
+}
+
+#next-btn:hover {
+  transform: translateY(-8px); /* Efecto hover más pronunciado */
+  box-shadow: 0 15px 30px rgba(106, 17, 203, 0.5);
+}
+
+#next-btn:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(106, 17, 203, 0.4);
+}
+
+/* Contador de preguntas */
+.counter {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2rem; /* Tamaño aumentado */
+  font-weight: 600;
+  color: #6a11cb;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Movimiento más pronunciado */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08); /* Efecto más pronunciado */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.option.selected {
+  animation: pulse 0.5s ease-in-out;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); /* Brillo más intenso */
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .container {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .option {
+    font-size: 2rem;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .options-container {
+    flex-direction: column;
+    gap: 80px; /* Espacio aumentado para el VS en medio */
+    min-height: auto;
+  }
+
+  .vs-badge {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .option {
+    min-height: 250px;
+    font-size: 1.8rem;
+    padding: 25px;
+  }
+
+  #next-btn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .option {
+    min-height: 200px;
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  .vs-badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  #next-btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+  }
+}

@@ -30,11 +30,42 @@
   <body>
     <div class="container">
       <h1>Verdad o Reto</h1>
-      <div id="buttons" class="buttons">
+
+     <!-- Sección de selección de categoría -->
+     <div id="category-selection" class="category-selection">
+      <h2>Selecciona una categoría</h2>
+      <div class="category-buttons">
+        <button id="clasicoBtn" class="category-btn clasico-btn">
+          <span class="icon">🎮</span>
+          <span class="label">Clásico</span>
+        </button>
+        <button id="parejasBtn" class="category-btn parejas-btn">
+          <span class="icon">💑</span>
+          <span class="label">Parejas</span>
+        </button>
+        <button id="amigosBtn" class="category-btn amigos-btn">
+          <span class="icon">👫</span>
+          <span class="label">Amigos</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Contenedor del juego con nueva estructura -->
+    <div class="game-container">
+      <!-- Botón de cambiar categoría (ARRIBA) -->
+      <div id="volver-categoria-container" class="volver-categoria-container">
+        <button id="volverCategoriaBtn" class="volver-categoria">Cambiar Categoría</button>
+      </div>
+      
+      <!-- Botones de Verdad o Reto (CENTRO) -->
+      <div id="buttons" class="buttons hidden">
         <button id="verdadBtn">Verdad</button>
         <button id="retoBtn">Reto</button>
       </div>
+
+      <!-- Contenido de la pregunta o reto (inicialmente oculto) -->
       <div id="content" class="hidden">
+        <div class="category-indicator" id="categoryIndicator"></div>
         <p id="texto"></p>
         <button id="volverBtn">Volver</button>
       </div>
