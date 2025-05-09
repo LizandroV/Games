@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+  background-color: #6a11cb;
+  background-image: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.category-icon {
+  font-size: 80px;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h2 {
+  color: white;
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  color: white;
+  font-size: 100px;
+  line-height: 1.4;
+  margin-bottom: 50px;
+  max-width: 90%;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 20px;
+}
+
+p::before,
+p::after {
+  content: '"';
+  font-size: 80px;
+  position: absolute;
+  opacity: 0.3;
+}
+
+p::before {
+  top: -20px;
+  left: -20px;
+}
+
+p::after {
+  bottom: -60px;
+  right: -20px;
+}
+
+.instruction {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 30px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Colores de fondo para cada categoría */
+body.colegio {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+}
+
+body.enfermedades {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+body.graciosos {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+body.pequenos {
+  background: linear-gradient(135deg, #f857a6, #ff5858);
+}
+
+body.frases {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+body.cotidiana {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Añadir un borde decorativo alrededor del contenido */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  p {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .category-icon {
+    font-size: 60px;
+  }
+}

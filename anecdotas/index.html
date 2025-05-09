@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anécdotas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="category-icon" id="categoryIcon"></div>
+        <h2 id="categoryTitle"></h2>
+        <p id="prompt"></p>
+        <div class="instruction">
+          Haz clic en cualquier lugar para continuar
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Datos de memorias directamente en el HTML para evitar problemas de carga
+      const memoriesData = {
+        colegio: {
+          icon: "🏫",
+          title: "Cosas del colegio",
+          prompts: [
+            "La primera vez que lleve a mi hijo(a) al colegio…",
+            "Recuerdo el día que mi hijo fue al colegio y olvidó…",
+            "Cuando me llamaron del colegio porque…",
+            "Recuerdo cuando me entere que no hizo la tarea…",
+          ],
+        },
+        enfermedades: {
+          icon: "🤕",
+          title: "Enfermedades y sustos",
+          prompts: [
+            "Una vez se cayó tan fuerte que …",
+            "Recuerdo la primera vez que lo llevé a urgencias…",
+            "Hubo una noche que no dormí nada…",
+            "Probé un remedio casero que me recomendaron…",
+          ],
+        },
+        graciosos: {
+          icon: "😂",
+          title: "Momentos graciosos",
+          prompts: [
+            "La travesura que nunca olvidaré…",
+            "Me dejó en vergüenza delante de todos…",
+            "El susto mas grande que me dio…",
+          ],
+        },
+        pequenos: {
+          icon: "🍼",
+          title: "Cuando eran pequeños",
+          prompts: [
+            'Recuerdo la primera vez que dijo "mamá"…',
+            "La emoción que sentí al ver su primer diente…",
+            "Recuerdo cuando caminó por primera vez…",
+            "Me hizo una pregunta tan inocente…",
+            "Cuando se comió algo que no debía",
+          ],
+        },
+        frases: {
+          icon: "💬",
+          title: "Frases inolvidables",
+          prompts: [
+            "Una vez me dijo algo tan lindo…",
+            "Recuerdo una promesa que me hizo…",
+            "Una vez dijo algo tan sabio…",
+          ],
+        },
+        cotidiana: {
+          icon: "🛒",
+          title: "Vida cotidiana",
+          prompts: [
+            "Una vez cuando fuimos al mercado…",
+            "Una vez lo perdí por unos segundos…",
+          ],
+        },
+      };
+
+      // Variables para controlar el estado
+      const categories = Object.keys(memoriesData);
+      const usedPrompts = new Set();
+      let allPrompts = [];
+
+      // Crear un array con todos los prompts disponibles
+      function createAllPromptsArray() {
+        allPrompts = [];
+        for (const category of categories) {
+          const prompts = memoriesData[category].prompts;
+          for (let i = 0; i < prompts.length; i++) {
+            allPrompts.push({
+              category: category,
+              promptIndex: i,
+            });
+          }
+        }
+        return allPrompts;
+      }
+
+      // Función para obtener un prompt aleatorio no usado
+      function getRandomPrompt() {
+        // Si todos los prompts han sido usados, reiniciar
+        if (usedPrompts.size >= allPrompts.length) {
+          usedPrompts.clear();
+          alert("¡Has visto todos los temas! Comenzaremos de nuevo.");
+        }
+
+        // Seleccionar un prompt aleatorio que no haya sido usado
+        let randomIndex;
+        let promptInfo;
+
+        do {
+          randomIndex = Math.floor(Math.random() * allPrompts.length);
+          promptInfo = allPrompts[randomIndex];
+
+          // Crear un ID único para este prompt
+          const promptId = `${promptInfo.category}-${promptInfo.promptIndex}`;
+
+          // Si este prompt ya ha sido usado, intentar otro
+          if (!usedPrompts.has(promptId)) {
+            usedPrompts.add(promptId);
+            break;
+          }
+        } while (true);
+
+        return promptInfo;
+      }
+
+      // Función para mostrar un prompt aleatorio
+      function displayRandomPrompt() {
+        const promptInfo = getRandomPrompt();
+        const category = promptInfo.category;
+        const promptIndex = promptInfo.promptIndex;
+
+        // Cambiar el color de fondo según la categoría
+        document.body.className = category;
+
+        // Actualizar el icono y título
+        document.getElementById("categoryIcon").textContent =
+          memoriesData[category].icon;
+        document.getElementById("categoryTitle").textContent =
+          memoriesData[category].title;
+
+        // Mostrar el prompt
+        document.getElementById("prompt").textContent =
+          memoriesData[category].prompts[promptIndex];
+      }
+
+      // Iniciar cuando la página esté cargada
+      document.addEventListener("DOMContentLoaded", function () {
+        // Crear el array de todos los prompts disponibles
+        createAllPromptsArray();
+
+        // Mostrar el primer prompt aleatorio
+        displayRandomPrompt();
+
+        // Añadir evento de clic a todo el documento
+        document.body.addEventListener("click", displayRandomPrompt);
+      });
+    </script>
+  </body>
+</html>
